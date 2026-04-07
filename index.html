@@ -75,20 +75,21 @@ nav{position:fixed;top:0;inset-inline:0;z-index:600;height:58px;display:flex;ali
 }
 
 /* HERO */
-.hero{align-items:center;text-align:center;padding:40px 80px}
-.hLine{width:1px;height:52px;background:linear-gradient(to bottom,transparent,var(--borderB));margin:0 auto 38px}
-.hEye{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-.hTitle{font-family:'Playfair Display',serif;font-weight:300;font-size:clamp(3rem,6vw,6.2rem);line-height:1.06;letter-spacing:-.025em}
+.hero{align-items:stretch;text-align:center;padding:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+.hero-inner{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(24px,4vh,60px) 80px;text-align:center}
+.hLine{width:1px;height:36px;background:linear-gradient(to bottom,transparent,var(--borderB));margin:0 auto 24px}
+.hEye{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hTitle{font-family:'Playfair Display',serif;font-weight:300;font-size:clamp(2rem,5.5vw,5.5rem);line-height:1.06;letter-spacing:-.025em}
 .hTitle em{font-style:italic;color:var(--dim)}
-.hSub{margin-top:22px;font-size:.88rem;font-weight:200;color:var(--dim);max-width:380px;line-height:1.8}
-.hCta{margin-top:44px;display:flex;align-items:center;gap:18px;justify-content:center}
+.hSub{margin-top:14px;font-size:.88rem;font-weight:200;color:var(--dim);max-width:380px;line-height:1.8}
+.hCta{margin-top:24px;display:flex;align-items:center;gap:18px;justify-content:center}
 .btn{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;padding:13px 28px;border:1px solid var(--borderB);background:transparent;color:var(--dim);cursor:none;border-radius:2px;transition:all .35s var(--spring)}
 .btn:hover{border-color:var(--gold);color:var(--gold);background:var(--goldG);transform:scale(1.03)}
 .hArr{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--faint)}
 .hArr svg{animation:arrPulse 2s ease-in-out infinite}
 @keyframes arrPulse{0%,100%{transform:translateX(0)}50%{transform:translateX(7px)}}
-.hMeta{margin-top:44px;display:flex;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden}
-.hm{padding:14px 28px;background:var(--bg3);border-right:1px solid var(--border);display:flex;flex-direction:column;gap:4px}
+.hMeta{margin-top:24px;display:flex;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden}
+.hm{padding:11px 22px;background:var(--bg3);border-right:1px solid var(--border);display:flex;flex-direction:column;gap:4px}
 .hm:last-child{border-right:none}
 .hm-l{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
 .hm-v{font-size:.8rem;font-weight:300;color:var(--dim)}
@@ -251,7 +252,7 @@ nav{position:fixed;top:0;inset-inline:0;z-index:600;height:58px;display:flex;ali
 .lb-arrow{color:var(--red);font-size:.9rem;transition:transform .35s var(--spring)}
 .lens-badge.open .lb-arrow{transform:rotate(90deg)}
 .lens-expand{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.22,1,.36,1),opacity .4s;opacity:0;margin-bottom:0}
-.lens-expand.open{max-height:200px;opacity:1;margin-bottom:20px}
+.lens-expand.open{max-height:200px;opacity:1;margin-bottom:12px}
 .le-row{display:flex;gap:16px;padding:10px 20px;border-bottom:1px solid var(--border);background:var(--bg3)}
 .le-row:last-child{border-bottom:none}
 .le-k{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);flex:0 0 100px}
@@ -390,6 +391,7 @@ nav{position:fixed;top:0;inset-inline:0;z-index:600;height:58px;display:flex;ali
 
   <!-- 0: HERO -->
   <div class="panel hero current" id="p0">
+    <div class="hero-inner">
     <div class="hLine"></div>
     <div class="hEye">Metacognition &amp; Media — A Reflection</div>
     <h1 class="hTitle">Looking inward<br>to move <em>forward</em></h1>
@@ -406,6 +408,7 @@ nav{position:fixed;top:0;inset-inline:0;z-index:600;height:58px;display:flex;ali
       <div class="hm"><span class="hm-l">Questions</span><span class="hm-v">5 of 5</span></div>
       <div class="hm"><span class="hm-l">Format</span><span class="hm-v">Digital Blog</span></div>
       <div class="hm hm-lens"><span class="hm-l">Favourite Lens</span><span class="hm-v hm-marxist">Marxist ✦</span></div>
+    </div>
     </div>
   </div>
 
@@ -429,6 +432,7 @@ nav{position:fixed;top:0;inset-inline:0;z-index:600;height:58px;display:flex;ali
       <div class="qr-inner">
 
       <p class="ai">I think I've been pretty dedicated to Grade 12 English, and I believe that stems from how I approach assignments and feedback. An example of this would be how I work with literary lenses. I always attempt to make an effort to go beyond just a surface-level interpretation; I try to deepen my understanding of lenses by exploring their complexity and subfields for which the Glossary is super helpful. I believe that this makes my work stand out, it makes it interesting and flavorful, which is something I strive for. In addition to that, I take my feedback very seriously, I actively try to incorporate feedback into my work by treating it as an important factor in how I approach each assignment, for example the Timed Write provided a really good insight about how I should present and explain my points, which is something I applied towards my Formal Paragraph. I think feedback is super underrated.</p>
+
       <p class="ai" style="margin-top:18px">For the days I am away I always take the initiative to catch up on my work. For example if I miss a chapter of Frankenstein or I don't necessarily understand what an assignment is asking I try to ask a peer for clarification. When it comes to a missed reading it gives me an excuse to throw on an audiobook and just chill. I often enjoy catching up on readings.</p>
 
       <div class="apq"><p>"Feedback is super underrated."</p></div>
